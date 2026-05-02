@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - PrepClan</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="assets/css/dashboard-premium.css">
+</head>
+<body>
+    <script src="assets/js/google-oauth-handler.js"></script>
+    <script src="assets/js/auth-guard.js"></script>
+    
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">PrepClan</div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="pages/mentoring/mentoring.html">1-1 Mentoring</a></li>
+                <li><a href="pages/content/content.html">Daily Content</a></li>
+                <li><a href="pages/mocks/mocks.html">Mock Tests</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Premium Hero Section -->
+    <section class="dashboard-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="welcome-text">
+                    <h1>Welcome back, <span id="user-name">Student</span>! 👋</h1>
+                    <p>Ready to continue your CAT 2026 preparation journey?</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat-item">
+                        <span class="stat-number" id="total-completed">0</span>
+                        <span class="stat-label">Total Completed</span>
+                    </div>
+                    <div class="hero-stat-item">
+                        <span class="stat-number" id="streak-days">0</span>
+                        <span class="stat-label">Day Streak</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard Content -->
+    <section class="dashboard-main">
+        <div class="container">
+            <!-- Progress Overview -->
+            <div class="section-header">
+                <h2>📊 Your Progress</h2>
+                <p>Track your performance across all sections</p>
+            </div>
+            
+            <div class="progress-grid">
+                <div class="progress-card">
+                    <div class="progress-icon rc-icon">📖</div>
+                    <div class="progress-info">
+                        <h3>Reading Comprehension</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="rc-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="progress-stats-row">
+                            <span class="completed-count"><span id="rc-progress">0</span> sets completed</span>
+                            <span class="progress-percent" id="rc-percent">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-card">
+                    <div class="progress-icon dilr-icon">🧩</div>
+                    <div class="progress-info">
+                        <h3>DILR</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill dilr-fill" id="dilr-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="progress-stats-row">
+                            <span class="completed-count"><span id="dilr-progress">0</span> sets completed</span>
+                            <span class="progress-percent" id="dilr-percent">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-card">
+                    <div class="progress-icon qa-icon">🔢</div>
+                    <div class="progress-info">
+                        <h3>Quantitative Aptitude</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill qa-fill" id="qa-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="progress-stats-row">
+                            <span class="completed-count"><span id="qa-progress">0</span> questions completed</span>
+                            <span class="progress-percent" id="qa-percent">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-card">
+                    <div class="progress-icon va-icon">✍️</div>
+                    <div class="progress-info">
+                        <h3>Verbal Ability</h3>
+                        <div class="progress-bar">
+                            <div class="progress-fill va-fill" id="va-bar" style="width: 0%"></div>
+                        </div>
+                        <div class="progress-stats-row">
+                            <span class="completed-count"><span id="va-progress">0</span> questions completed</span>
+                            <span class="progress-percent" id="va-percent">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section-header" style="margin-top: 3rem;">
+                <h2>🚀 Quick Actions</h2>
+                <p>Jump right into your practice sessions</p>
+            </div>
+
+            <div class="quick-actions-grid">
+                <a href="pages/content/rc.html" class="action-card rc-card">
+                    <div class="action-icon">📖</div>
+                    <h3>RC Practice</h3>
+                    <p>5 sets available today</p>
+                    <span class="action-arrow">→</span>
+                </a>
+
+                <a href="pages/content/dilr.html" class="action-card dilr-card">
+                    <div class="action-icon">🧩</div>
+                    <h3>DILR Practice</h3>
+                    <p>5 sets available today</p>
+                    <span class="action-arrow">→</span>
+                </a>
+
+                <a href="pages/content/qa.html" class="action-card qa-card">
+                    <div class="action-icon">🔢</div>
+                    <h3>QA Practice</h3>
+                    <p>40 questions available</p>
+                    <span class="action-arrow">→</span>
+                </a>
+
+                <a href="pages/content/va.html" class="action-card va-card">
+                    <div class="action-icon">✍️</div>
+                    <h3>VA Practice</h3>
+                    <p>40 questions available</p>
+                    <span class="action-arrow">→</span>
+                </a>
+            </div>
+
+            <!-- Study Plan & Upgrade -->
+            <div class="bottom-section">
+                <div class="study-plan-card">
+                    <div class="plan-header">
+                        <h3>📚 Your Study Plan</h3>
+                    </div>
+                    <div class="plan-details">
+                        <div class="plan-item">
+                            <span class="plan-label">Target Exam</span>
+                            <span class="plan-value" id="user-exam">CAT 2026</span>
+                        </div>
+                        <div class="plan-item">
+                            <span class="plan-label">Current Plan</span>
+                            <span class="plan-value" id="user-plan">None</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upgrade-card">
+                    <div class="upgrade-content">
+                        <h3>🎯 Upgrade Your Preparation</h3>
+                        <p>Get personalized mentoring and accelerate your progress</p>
+                        <a href="pages/mentoring/mentoring.html" class="btn btn-primary">Explore Plans</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 PrepClan. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard-premium.js"></script>
+</body>
+</html>

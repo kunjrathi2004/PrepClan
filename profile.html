@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - PrepClan</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+    <script src="assets/js/auth-guard.js"></script>
+    
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">PrepClan</div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="pages/mentoring/mentoring.html">1-1 Mentoring</a></li>
+                <li><a href="pages/content/content.html">Daily Content</a></li>
+                <li><a href="pages/mocks/mocks.html">Mock Tests</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>My Profile</h1>
+            <p>Manage your account information</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="profile-container">
+                <!-- View Mode -->
+                <div id="view-mode" class="profile-view">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                            <span id="avatar-initial">U</span>
+                        </div>
+                        <div class="profile-info-header">
+                            <h2 id="profile-name">Loading...</h2>
+                            <p id="profile-email">email@example.com</p>
+                        </div>
+                        <button class="btn btn-primary" id="edit-btn">Edit Profile</button>
+                    </div>
+
+                    <div class="profile-details">
+                        <div class="detail-group">
+                            <label>Full Name</label>
+                            <p id="view-name">-</p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Email Address</label>
+                            <p id="view-email">-</p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Contact Number</label>
+                            <p id="view-contact">-</p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Date of Birth</label>
+                            <p id="view-dob">-</p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Target Exam</label>
+                            <p id="view-exam">-</p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Enrolled Plan</label>
+                            <p id="view-plan">-</p>
+                        </div>
+                        <div class="detail-group">
+                            <label>Member Since</label>
+                            <p id="view-created">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edit Mode -->
+                <div id="edit-mode" class="profile-edit" style="display: none;">
+                    <form id="profile-form">
+                        <div class="form-group">
+                            <label for="edit-name">Full Name</label>
+                            <input type="text" id="edit-name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-email">Email Address</label>
+                            <input type="email" id="edit-email" name="email" required disabled>
+                            <small>Email cannot be changed</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-contact">Contact Number</label>
+                            <input type="tel" id="edit-contact" name="contactNumber">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-dob">Date of Birth</label>
+                            <input type="date" id="edit-dob" name="dateOfBirth">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edit-exam">Target Exam</label>
+                            <select id="edit-exam" name="targetExam">
+                                <option value="CAT">CAT</option>
+                                <option value="XAT">XAT</option>
+                                <option value="SNAP">SNAP</option>
+                                <option value="NMAT">NMAT</option>
+                                <option value="IIFT">IIFT</option>
+                                <option value="CMAT">CMAT</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <button type="button" class="btn btn-secondary" id="cancel-btn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="alert" id="profile-alert" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 PrepClan. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/profile.js"></script>
+</body>
+</html>
