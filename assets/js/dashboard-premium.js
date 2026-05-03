@@ -1,5 +1,7 @@
-// API Base URL
-const API_URL = 'http://localhost:5000/api';
+// API Base URL - automatically detect environment
+const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:5000/api'
+    : `${window.location.origin}/api`;
 
 // Check if we're processing OAuth token
 const urlParams = new URLSearchParams(window.location.search);
