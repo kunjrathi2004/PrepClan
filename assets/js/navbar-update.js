@@ -2,46 +2,51 @@
 (function() {
     const token = localStorage.getItem('token');
     const isLoggedIn = !!token;
-    
-    // Get all nav links
     const navLinks = document.querySelector('.nav-links');
     
-    if (navLinks && isLoggedIn) {
-        // User is logged in - show dashboard, profile, logout
-        const loginBtn = navLinks.querySelector('.login-btn');
-        if (loginBtn) {
-            loginBtn.remove();
-        }
+    if (!navLinks) return;
+    
+    // Clear all existing nav items
+    navLinks.innerHTML = '';
+    
+    // Determine base path (for programs.html which is in root)
+    const isInSubfolder = window.location.pathname.includes('/pages/');
+    const basePath = isInSubfolder ? '../' : '';
+    
+    // Common links for all users
+    const homeLink = `<li><a href="${basePath}index.html">Home</a></li>`;
+    const programsLink = `<li><a href="${basePath}programs.html">Programs</a></li>`;
+    const aboutLink = `<li><a href="${basePath}about.html">About Us</a></li>`;
+    const contactLink = `<li><a href="${basePath}contact.html">Contact</a></li>`;
+    
+    if (isLoggedIn) {
+        // Logged-in navbar: Home, Programs, Dashboard, Profile, Logout
+        navLinks.innerHTML = `
+            ${homeLink}
+            ${programsLink}
+            <li><a href="${basePath}dashboard.html">Dashboard</a></li>
+            <li><a href="${basePath}profile.html">Profile</a></li>
+            <li><a href="#" id="logout-btn-dynamic">Logout</a></li>
+        `;
         
-        // Check if dashboard link exists
-        const hasDashboard = Array.from(navLinks.querySelectorAll('a')).some(a => a.href.includes('dashboard.html'));
-        const hasProfile = Array.from(navLinks.querySelectorAll('a')).some(a => a.href.includes('profile.html'));
-        const hasLogout = Array.from(navLinks.querySelectorAll('a')).some(a => a.id === 'logout-btn' || a.id === 'logout-btn-dynamic');
-        
-        if (!hasDashboard) {
-            const dashboardLi = document.createElement('li');
-            dashboardLi.innerHTML = '<a href="/dashboard.html">Dashboard</a>';
-            navLinks.insertBefore(dashboardLi, navLinks.children[1]);
-        }
-        
-        if (!hasProfile) {
-            const profileLi = document.createElement('li');
-            profileLi.innerHTML = '<a href="/profile.html">Profile</a>';
-            navLinks.appendChild(profileLi);
-        }
-        
-        if (!hasLogout) {
-            const logoutLi = document.createElement('li');
-            logoutLi.innerHTML = '<a href="#" id="logout-btn-dynamic">Logout</a>';
-            navLinks.appendChild(logoutLi);
-            
-            // Add logout handler
-            document.getElementById('logout-btn-dynamic').addEventListener('click', (e) => {
+        // Add logout handler
+        const logoutBtn = document.getElementById('logout-btn-dynamic');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 localStorage.removeItem('token');
                 localStorage.removeItem('user');
-                window.location.href = '/login.html';
+                window.location.href = basePath + 'login.html';
             });
         }
+    } else {
+        // Logged-out navbar: Home, Programs, About Us, Contact, Login
+        navLinks.innerHTML = `
+            ${homeLink}
+            ${programsLink}
+            ${aboutLink}
+            ${contactLink}
+            <li><a href="${basePath}login.html" class="login-btn">Login</a></li>
+        `;
     }
 })();
