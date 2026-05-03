@@ -9,8 +9,13 @@
         // Store token immediately
         localStorage.setItem('token', token);
         
+        // Determine API URL based on environment
+        const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? 'http://localhost:5000/api'
+            : `${window.location.origin}/api`;
+        
         // Fetch user data
-        fetch('http://localhost:5000/api/auth/me', {
+        fetch(`${API_URL}/auth/me`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
             },
