@@ -8,6 +8,20 @@ const passport = require('./server/config/passport');
 // Initialize Express
 const app = express();
 
+// Validate critical environment variables
+const requiredEnvVars = ['MONGODB_URI', 'JWT_SECRET', 'SESSION_SECRET'];
+const missingEnvVars = requiredEnvVars.filter(varName => !process.env[varName]);
+
+if (missingEnvVars.length > 0) {
+    console.error('❌ Missing required environment variables:', missingEnvVars.join(', '));
+    console.error('Please set these in Railway or your .env file');
+}
+
+// Warn about Google OAuth if not configured
+if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
+    console.warn('⚠️  Google OAuth not configured. Set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET to enable.');
+}
+
 // Connect to MongoDB
 connectDB();
 
@@ -62,11 +76,12 @@ app.get('/api/health', (req, res) => {
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-    console.error(err.stack);
+    console.error('Error occurred:', err.stack);
+    console.error('Error message:', err.message);
     res.status(500).json({
         success: false,
         message: 'Something went wrong!',
-        error: process.env.NODE_ENV === 'development' ? err.message : undefined,
+        error: process.env.NODE_ENV === 'production' ? err.message : err.stack,
     });
 });
 

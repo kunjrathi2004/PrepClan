@@ -25,10 +25,13 @@ passport.use(
         },
         async (accessToken, refreshToken, profile, done) => {
             try {
+                console.log('Google OAuth callback received for:', profile.emails[0].value);
+                
                 // Check if user already exists
                 let user = await User.findOne({ email: profile.emails[0].value });
 
                 if (user) {
+                    console.log('Existing user found:', user.email);
                     // User exists, update Google ID if not set
                     if (!user.googleId) {
                         user.googleId = profile.id;
@@ -37,6 +40,7 @@ passport.use(
                     return done(null, user);
                 }
 
+                console.log('Creating new user from Google OAuth');
                 // Create new user
                 user = await User.create({
                     googleId: profile.id,
@@ -46,8 +50,10 @@ passport.use(
                     isVerified: true,
                 });
 
+                console.log('New user created:', user.email);
                 done(null, user);
             } catch (error) {
+                console.error('Google OAuth error:', error);
                 done(error, null);
             }
         }
