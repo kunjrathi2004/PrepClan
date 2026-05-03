@@ -1,14 +1,7 @@
-// Update navbar based on login status and redirect if needed
+// Update navbar based on login status
 (function() {
     const token = localStorage.getItem('token');
     const isLoggedIn = !!token;
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    
-    // If logged in and on home page, redirect to dashboard
-    if (isLoggedIn && (currentPage === 'index.html' || currentPage === '')) {
-        window.location.href = '/dashboard.html';
-        return;
-    }
     
     // Get all nav links
     const navLinks = document.querySelector('.nav-links');
