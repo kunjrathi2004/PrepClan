@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     padding: 2rem 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0B1F3A 0%, #1a3a5c 100%);
     position: relative;
     overflow: hidden;
 }
@@ -42,7 +42,7 @@
 }
 
 .auth-image {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.95) 0%, rgba(79, 70, 229, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(255, 122, 0, 0.95) 0%, rgba(230, 109, 0, 0.95) 100%);
     padding: 3rem;
     border-radius: 0 20px 20px 0;
     display: flex;
@@ -175,8 +175,8 @@
 
 .form-group input:focus {
     outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
 }
 
 .form-group input::placeholder {
@@ -198,7 +198,7 @@
 }
 
 .checkbox-label a {
-    color: var(--primary);
+    color: var(--secondary);
     text-decoration: none;
 }
 
@@ -216,7 +216,7 @@
 }
 
 .forgot-link {
-    color: var(--primary);
+    color: var(--secondary);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
@@ -305,7 +305,7 @@
 }
 
 .auth-switch a {
-    color: var(--primary);
+    color: var(--secondary);
     text-decoration: none;
     font-weight: 600;
 }
@@ -436,7 +436,7 @@
 .stat-value {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--secondary);
 }
 
 .quick-actions {
@@ -446,7 +446,7 @@
 
 .action-btn {
     padding: 1rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
     color: white;
     text-decoration: none;
     border-radius: 10px;
@@ -457,7 +457,7 @@
 
 .action-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
 }
 
 .profile-info {
@@ -504,7 +504,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
