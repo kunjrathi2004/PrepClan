@@ -189,7 +189,7 @@ h1, h2, h3, h4, h5, h6 {
 .cta-buttons {
     display: flex;
     gap: 1.25rem;
-    justify-content: center;
+    justify-content: flex-start;
     animation: fadeInUp 0.8s ease 0.4s both;
 }
 
