@@ -16,86 +16,435 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Get 1-1 Mentorship from 99+ Percentilers</h1>
-            <p>Personalized guidance to crack CAT 2026 and convert your dream B-School</p>
-            <div class="cta-buttons">
-                <a href="#" id="mentoring-cta" class="btn btn-primary">Get Your Mentor Now</a>
-                <a href="#categories" class="btn btn-secondary">Explore Programs</a>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">🎯 CAT 2026 Preparation</div>
+                    <h1>Get 1-1 Mentorship from 99+ Percentilers</h1>
+                    <p>Join 5,000+ aspirants who are preparing smarter with personalized guidance from IIM alumni and top percentilers</p>
+                    <div class="cta-buttons">
+                        <a href="#" id="mentoring-cta" class="btn btn-primary">Get Your Mentor Now →</a>
+                        <a href="#categories" class="btn btn-secondary">Explore Programs</a>
+                    </div>
+                    <div class="hero-stats-inline">
+                        <div class="stat-inline">
+                            <strong>5,000+</strong>
+                            <span>Students</span>
+                        </div>
+                        <div class="stat-inline">
+                            <strong>50+</strong>
+                            <span>Expert Mentors</span>
+                        </div>
+                        <div class="stat-inline">
+                            <strong>95%</strong>
+                            <span>Success Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card card-1">
+                        <div class="card-icon">📊</div>
+                        <div class="card-text">
+                            <strong>Track Progress</strong>
+                            <p>Real-time analytics</p>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="card-icon">👨‍🏫</div>
+                        <div class="card-text">
+                            <strong>Expert Mentors</strong>
+                            <p>99+ percentilers</p>
+                        </div>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="card-icon">🎯</div>
+                        <div class="card-text">
+                            <strong>Personalized</strong>
+                            <p>Custom study plans</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">✅</div>
+                    <p>Trusted by 5,000+ students</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">⭐</div>
+                    <p>4.8/5 rating on Google</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🏆</div>
+                    <p>500+ IIM admits in 2025</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💯</div>
+                    <p>100% money-back guarantee</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Three Main Categories -->
-    <section class="features" id="categories" style="background: var(--bg-white); padding: 4rem 0;">
+    <section class="categories-section" id="categories">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Choose Your Path to Success</h2>
-            <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div class="feature-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;" onclick="handleCategoryClick('mentoring')">
-                    <div class="icon" style="font-size: 3rem;">👨🏫</div>
-                    <h3 style="font-size: 1.5rem; margin: 1rem 0;">1-1 Mentoring</h3>
-                    <p style="margin-bottom: 1.5rem;">Personal guidance from IIM alumni and 99+ percentilers. Get customized study plans and weekly strategy sessions.</p>
-                    <a href="#" class="btn btn-primary" onclick="event.stopPropagation(); handleCategoryClick('mentoring');">Explore Mentoring</a>
+            <div class="section-header-center">
+                <h2>Choose Your Path to Success</h2>
+                <p>Comprehensive programs designed for every stage of your CAT journey</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card featured" onclick="handleCategoryClick('mentoring')">
+                    <div class="category-badge">Most Popular</div>
+                    <div class="category-icon">👨‍🏫</div>
+                    <h3>1-1 Mentoring</h3>
+                    <p>Personal guidance from IIM alumni and 99+ percentilers. Get customized study plans and weekly strategy sessions.</p>
+                    <ul class="category-features">
+                        <li>✓ Weekly 1-1 sessions</li>
+                        <li>✓ Personalized study plan</li>
+                        <li>✓ 24/7 doubt support</li>
+                        <li>✓ Mock test analysis</li>
+                    </ul>
+                    <div class="category-footer">
+                        <span class="category-price">From ₹2,499/month</span>
+                        <a href="#" class="btn btn-primary btn-sm" onclick="event.stopPropagation(); handleCategoryClick('mentoring');">Explore →</a>
+                    </div>
                 </div>
-                <div class="feature-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;" onclick="handleCategoryClick('cat-prep')">
-                    <div class="icon" style="font-size: 3rem;">📚</div>
-                    <h3 style="font-size: 1.5rem; margin: 1rem 0;">CAT Preparation</h3>
-                    <p style="margin-bottom: 1.5rem;">Complete CAT prep with daily practice, mock tests, and sectional mastery. From basics to advanced level.</p>
-                    <a href="#" class="btn btn-primary" onclick="event.stopPropagation(); handleCategoryClick('cat-prep');">Start CAT Prep</a>
+                <div class="category-card" onclick="handleCategoryClick('cat-prep')">
+                    <div class="category-icon">📚</div>
+                    <h3>CAT Preparation</h3>
+                    <p>Complete CAT prep with daily practice, mock tests, and sectional mastery. From basics to advanced level.</p>
+                    <ul class="category-features">
+                        <li>✓ 100+ mock tests</li>
+                        <li>✓ Daily practice sets</li>
+                        <li>✓ Video solutions</li>
+                        <li>✓ Performance analytics</li>
+                    </ul>
+                    <div class="category-footer">
+                        <span class="category-price">From ₹2,999/month</span>
+                        <a href="#" class="btn btn-primary btn-sm" onclick="event.stopPropagation(); handleCategoryClick('cat-prep');">Start Prep →</a>
+                    </div>
                 </div>
-                <div class="feature-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;" onclick="handleCategoryClick('gdpi')">
-                    <div class="icon" style="font-size: 3rem;">💼</div>
-                    <h3 style="font-size: 1.5rem; margin: 1rem 0;">GDPI Training</h3>
-                    <p style="margin-bottom: 1.5rem;">Group Discussion and Personal Interview preparation. Convert your calls into final admits.</p>
-                    <a href="#" class="btn btn-primary" onclick="event.stopPropagation(); handleCategoryClick('gdpi');">Master GDPI</a>
+                <div class="category-card" onclick="handleCategoryClick('gdpi')">
+                    <div class="category-icon">💼</div>
+                    <h3>GDPI Training</h3>
+                    <p>Group Discussion and Personal Interview preparation. Convert your calls into final admits.</p>
+                    <ul class="category-features">
+                        <li>✓ Mock GD sessions</li>
+                        <li>✓ 1-1 PI practice</li>
+                        <li>✓ Profile building</li>
+                        <li>✓ B-school insights</li>
+                    </ul>
+                    <div class="category-footer">
+                        <span class="category-price">From ₹1,999/month</span>
+                        <a href="#" class="btn btn-primary btn-sm" onclick="event.stopPropagation(); handleCategoryClick('gdpi');">Master GDPI →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose PrepClan -->
-    <section class="features">
+    <section class="features-section">
         <div class="container">
-            <h2>Why Choose PrepClan Mentoring?</h2>
-            <p>Get the competitive edge with personalized guidance</p>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="icon">🎯</div>
-                    <h3>Personalized Study Plans</h3>
-                    <p>Customized roadmap based on your strengths, weaknesses, and target score. No generic one-size-fits-all approach.</p>
+            <div class="section-header-center">
+                <h2>Why 5,000+ Students Choose PrepClan</h2>
+                <p>We don't just teach. We mentor, guide, and transform.</p>
+            </div>
+            <div class="features-grid-4">
+                <div class="feature-box">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Learning</h3>
+                    <p>Every student gets a customized study plan based on their strengths, weaknesses, and target percentile.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="icon">👨🏫</div>
+                <div class="feature-box">
+                    <div class="feature-icon">👨‍🏫</div>
                     <h3>Expert Mentors</h3>
-                    <p>Learn directly from IIM alumni and mentors who scored 99+ percentile. Get insider strategies that work.</p>
+                    <p>Learn from IIM alumni and 99+ percentilers who have cracked CAT and know what it takes.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="icon">📊</div>
-                    <h3>Weekly Progress Tracking</h3>
-                    <p>Regular check-ins and performance analysis to keep you on track and continuously improving.</p>
+                <div class="feature-box">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Advanced analytics to track your performance, identify weak areas, and measure improvement.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">💬</div>
+                    <h3>24/7 Support</h3>
+                    <p>Get your doubts cleared anytime via WhatsApp, email, or scheduled sessions with mentors.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">📝</div>
+                    <h3>100+ Mock Tests</h3>
+                    <p>Full-length and sectional mocks designed to simulate the actual CAT exam experience.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Complete GDPI Prep</h3>
+                    <p>Don't lose your seat at the final stage. Master GD, PI, and WAT with expert guidance.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile App</h3>
+                    <p>Practice on the go with our mobile app. Available on iOS and Android.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Proven Results</h3>
+                    <p>500+ students got into IIMs in 2025. 95% improved their scores within 3 months.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Success Metrics -->
-    <section class="features" style="background: var(--bg-white);">
+    <!-- How It Works -->
+    <section class="how-it-works">
         <div class="container">
-            <div class="phase-banner" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);">
-                <h2>Proven Results</h2>
-                <p style="font-size: 2.5rem; font-weight: 800; margin: 1rem 0;">95%+</p>
-                <p>of our students improve their mock scores within 3 months</p>
+            <div class="section-header-center">
+                <h2>How PrepClan Works</h2>
+                <p>Your journey from CAT aspirant to IIM student in 4 simple steps</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Sign Up & Assessment</h3>
+                    <p>Create your account and take a diagnostic test to assess your current level and identify areas for improvement.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Get Matched with Mentor</h3>
+                    <p>We match you with the perfect mentor based on your goals, learning style, and target B-schools.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Follow Your Study Plan</h3>
+                    <p>Practice daily with personalized content, take mocks, and attend weekly mentoring sessions.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Crack CAT & Convert</h3>
+                    <p>Ace the CAT exam and convert your calls with our comprehensive GDPI preparation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Success Stories from Our Students</h2>
+                <p>Real results from real students who trusted PrepClan</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">R</div>
+                        <div class="testimonial-info">
+                            <h4>Rahul Sharma</h4>
+                            <p>IIM Ahmedabad, 99.2%ile</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"PrepClan's mentorship was a game-changer. My mentor helped me improve from 70%ile to 99.2%ile in just 6 months. The personalized study plan and weekly sessions kept me on track."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">P</div>
+                        <div class="testimonial-info">
+                            <h4>Priya Patel</h4>
+                            <p>IIM Bangalore, 98.5%ile</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The mock tests and detailed analysis helped me identify my weak areas. The GDPI preparation was excellent - I converted all 3 of my calls!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <h4>Arjun Mehta</h4>
+                            <p>IIM Calcutta, 99.5%ile</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Best investment I made for my CAT prep. The mentors are incredibly knowledgeable and the study material is top-notch. Highly recommend!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid-large">
+                <div class="stat-large">
+                    <div class="stat-number-large">5,000+</div>
+                    <div class="stat-label-large">Active Students</div>
+                </div>
+                <div class="stat-large">
+                    <div class="stat-number-large">500+</div>
+                    <div class="stat-label-large">IIM Admits 2025</div>
+                </div>
+                <div class="stat-large">
+                    <div class="stat-number-large">95%</div>
+                    <div class="stat-label-large">Score Improvement</div>
+                </div>
+                <div class="stat-large">
+                    <div class="stat-number-large">50+</div>
+                    <div class="stat-label-large">Expert Mentors</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Preview -->
+    <section class="pricing-preview">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Affordable Plans for Every Aspirant</h2>
+                <p>Choose the plan that fits your preparation stage and budget</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic Mentorship</h3>
+                    <div class="price-tag">
+                        <span class="price">₹2,499</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ 6 mentoring sessions</li>
+                        <li>✓ Study plan template</li>
+                        <li>✓ Email support</li>
+                        <li>✓ Monthly progress review</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary btn-block" onclick="handleCategoryClick('mentoring')">Get Started</a>
+                </div>
+                <div class="pricing-card featured-pricing">
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3>Premium Mentorship</h3>
+                    <div class="price-tag">
+                        <span class="price">₹7,999</span>
+                        <span class="period">/6 months</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ 24 mentoring sessions</li>
+                        <li>✓ Personalized study plan</li>
+                        <li>✓ 24/7 WhatsApp support</li>
+                        <li>✓ Mock test analysis</li>
+                        <li>✓ GDPI preparation</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary btn-block" onclick="handleCategoryClick('mentoring')">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>CAT Full Prep</h3>
+                    <div class="price-tag">
+                        <span class="price">₹9,999</span>
+                        <span class="period">/12 months</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Complete CAT course</li>
+                        <li>✓ 100+ mock tests</li>
+                        <li>✓ Daily practice content</li>
+                        <li>✓ 8 mentoring sessions</li>
+                        <li>✓ Performance analytics</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary btn-block" onclick="handleCategoryClick('cat-prep')">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header-center">
+                <h2>Frequently Asked Questions</h2>
+                <p>Got questions? We've got answers.</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Who are the mentors?</h3>
+                    <p>Our mentors are IIM alumni and CAT toppers who scored 99+ percentile. They have years of experience in mentoring and understand what it takes to crack CAT.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How does the mentoring work?</h3>
+                    <p>You'll have weekly 1-1 video sessions with your mentor. They'll create a personalized study plan, track your progress, analyze your mocks, and provide strategic guidance.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I switch my mentor?</h3>
+                    <p>Yes! If you feel your mentor isn't the right fit, you can request a change anytime. We want you to be comfortable and get the best guidance.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is there a money-back guarantee?</h3>
+                    <p>Yes, we offer a 100% money-back guarantee within the first 7 days if you're not satisfied with our services. No questions asked.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you provide study material?</h3>
+                    <p>Yes, all our plans include comprehensive study material, practice questions, mock tests, and video solutions for all sections.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How is PrepClan different from coaching institutes?</h3>
+                    <p>Unlike traditional coaching, we provide personalized 1-1 attention. Your mentor focuses only on you, understands your unique challenges, and creates a custom plan for your success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your CAT 2026 Journey?</h2>
+                <p>Join 5,000+ students who are preparing smarter with PrepClan</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-lg" onclick="handleCategoryClick('mentoring')">Get Your Mentor Now →</a>
+                    <a href="#categories" class="btn btn-secondary btn-lg">View All Programs</a>
+                </div>
+                <p class="cta-note">✓ No credit card required • ✓ 7-day money-back guarantee</p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 PrepClan. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>PrepClan</h4>
+                    <p>Your trusted partner for CAT 2026 preparation. Personalized mentoring from 99+ percentilers.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="#" onclick="handleCategoryClick('mentoring')">1-1 Mentoring</a></li>
+                        <li><a href="#" onclick="handleCategoryClick('cat-prep')">CAT Preparation</a></li>
+                        <li><a href="#" onclick="handleCategoryClick('gdpi')">GDPI Training</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>Email: info@prepclan.in</p>
+                    <p>Support: Mon-Sat, 9 AM - 8 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PrepClan. All rights reserved.</p>
             </div>
         </div>
     </footer>
