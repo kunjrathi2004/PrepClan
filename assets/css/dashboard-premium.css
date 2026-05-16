@@ -152,11 +152,16 @@
     padding: 0.75rem;
     background: var(--bg-light);
     border-radius: 8px;
-    transition: all 0.2s;
+    transition: all 0.3s;
 }
 
 .task-item:hover {
-    background: #f0f0f0;
+    background: linear-gradient(135deg, #0B1F3A 0%, #1a3a5c 100%);
+}
+
+.task-item:hover .task-title,
+.task-item:hover .task-time {
+    color: white;
 }
 
 .task-item input[type="checkbox"] {
@@ -324,21 +329,14 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-.rc-btn { background: linear-gradient(135deg, #0B1F3A 0%, #1a3a5c 100%); border-color: #0B1F3A; }
-.dilr-btn { background: linear-gradient(135deg, #1a3a5c 0%, #0B1F3A 100%); border-color: #1a3a5c; }
-.qa-btn { background: linear-gradient(135deg, #0B1F3A 0%, #1a3a5c 100%); border-color: #0B1F3A; }
-.va-btn { background: linear-gradient(135deg, #1a3a5c 0%, #0B1F3A 100%); border-color: #1a3a5c; }
-.mock-btn { background: linear-gradient(135deg, #0B1F3A 0%, #1a3a5c 100%); border-color: #0B1F3A; }
-.mentor-btn { background: linear-gradient(135deg, #FF7A00 0%, #E66D00 100%); border-color: #FF7A00; }
-
 .rc-btn:hover, .dilr-btn:hover, .qa-btn:hover, .va-btn:hover, .mock-btn:hover { 
-    background: linear-gradient(135deg, #1a3a5c 0%, #2a4a6c 100%);
-    border-color: #1a3a5c;
+    background: linear-gradient(135deg, #0B1F3A 0%, #1a3a5c 100%);
+    border-color: #0B1F3A;
 }
 
 .mentor-btn:hover { 
-    background: linear-gradient(135deg, #FF9433 0%, #FF7A00 100%);
-    border-color: #FF9433;
+    background: linear-gradient(135deg, #FF7A00 0%, #E66D00 100%);
+    border-color: #FF7A00;
 }
 
 .action-icon {
@@ -349,6 +347,11 @@
 .action-text {
     font-size: 0.85rem;
     font-weight: 600;
+    color: var(--text-dark);
+    transition: color 0.3s;
+}
+
+.quick-action-btn:hover .action-text {
     color: white;
 }
 
@@ -364,6 +367,21 @@
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
+    transition: all 0.3s;
+}
+
+.stat-box:hover {
+    background: linear-gradient(135deg, #0B1F3A 0%, #1a3a5c 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box:hover .stat-value {
+    color: white;
+}
+
+.stat-box:hover .stat-label {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .stat-value {
