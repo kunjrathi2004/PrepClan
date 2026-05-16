@@ -107,10 +107,27 @@ loginForm.addEventListener('submit', async (e) => {
 
             showAlert('Login successful! Redirecting...', 'success');
 
-            // Redirect to dashboard after 1 second
-            setTimeout(() => {
-                window.location.href = 'dashboard.html';
-            }, 1000);
+            // Check for redirect after login
+            const redirectCategory = localStorage.getItem('redirectAfterLogin');
+            if (redirectCategory) {
+                localStorage.removeItem('redirectAfterLogin');
+                setTimeout(() => {
+                    if (redirectCategory === 'mentoring') {
+                        window.location.href = 'pages/mentoring/mentoring.html';
+                    } else if (redirectCategory === 'cat-prep') {
+                        window.location.href = 'programs.html#cat-prep';
+                    } else if (redirectCategory === 'gdpi') {
+                        window.location.href = 'programs.html#gdpi';
+                    } else {
+                        window.location.href = 'pages/mentoring/mentoring.html';
+                    }
+                }, 1000);
+            } else {
+                // Default redirect to mentoring page
+                setTimeout(() => {
+                    window.location.href = 'pages/mentoring/mentoring.html';
+                }, 1000);
+            }
         } else {
             showAlert(data.message || 'Login failed');
         }
@@ -176,9 +193,9 @@ registerForm.addEventListener('submit', async (e) => {
 
             showAlert('Registration successful! Redirecting...', 'success');
 
-            // Redirect to dashboard after 1 second
+            // Redirect to mentoring page after 1 second
             setTimeout(() => {
-                window.location.href = 'dashboard.html';
+                window.location.href = 'pages/mentoring/mentoring.html';
             }, 1000);
         } else {
             showAlert(data.message || 'Registration failed');
@@ -209,8 +226,8 @@ function checkAuth() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                // User is authenticated, redirect to dashboard
-                window.location.href = 'dashboard.html';
+                // User is authenticated, redirect to mentoring page
+                window.location.href = 'pages/mentoring/mentoring.html';
             } else {
                 // Token is invalid, clear storage
                 localStorage.removeItem('token');
@@ -246,7 +263,7 @@ if (token) {
             localStorage.setItem('user', JSON.stringify(data.data));
             showAlert('Login successful! Redirecting...', 'success');
             setTimeout(() => {
-                window.location.href = 'dashboard.html';
+                window.location.href = 'pages/mentoring/mentoring.html';
             }, 1000);
         }
     })

@@ -18,44 +18,47 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Crack CAT. Convert Top B-Schools.</h1>
-            <p>Personalized prep, expert mentorship, and real exam strategies.</p>
+            <h1>Get 1-1 Mentorship from 99+ Percentilers</h1>
+            <p>Personalized guidance to crack CAT 2026 and convert your dream B-School</p>
             <div class="cta-buttons">
-                <a href="pages/mentoring/mentoring.html" class="btn btn-primary">Start Your Prep</a>
-                <a href="pages/mocks/mocks.html" class="btn btn-secondary">Take Free Diagnostic Test</a>
+                <a href="#" id="mentoring-cta" class="btn btn-primary">Get Your Mentor Now</a>
+                <a href="#categories" class="btn btn-secondary">Explore Programs</a>
             </div>
         </div>
     </section>
 
-    <!-- Problem Statement Section -->
-    <section class="features" style="background: var(--bg-white); padding: 4rem 0;">
+    <!-- Three Main Categories -->
+    <section class="features" id="categories" style="background: var(--bg-white); padding: 4rem 0;">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 1rem;">Most aspirants struggle due to lack of direction, not effort.</h2>
-            <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 2rem;">
-                <div class="feature-card" style="text-align: center;">
-                    <div class="icon">📋</div>
-                    <h3>Random study plans</h3>
-                    <p>No clear roadmap to follow</p>
+            <h2 style="text-align: center; margin-bottom: 2rem;">Choose Your Path to Success</h2>
+            <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="feature-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;" onclick="handleCategoryClick('mentoring')">
+                    <div class="icon" style="font-size: 3rem;">👨🏫</div>
+                    <h3 style="font-size: 1.5rem; margin: 1rem 0;">1-1 Mentoring</h3>
+                    <p style="margin-bottom: 1.5rem;">Personal guidance from IIM alumni and 99+ percentilers. Get customized study plans and weekly strategy sessions.</p>
+                    <a href="#" class="btn btn-primary" onclick="event.stopPropagation(); handleCategoryClick('mentoring');">Explore Mentoring</a>
                 </div>
-                <div class="feature-card" style="text-align: center;">
-                    <div class="icon">❌</div>
-                    <h3>No feedback</h3>
-                    <p>Mistakes keep repeating</p>
+                <div class="feature-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;" onclick="handleCategoryClick('cat-prep')">
+                    <div class="icon" style="font-size: 3rem;">📚</div>
+                    <h3 style="font-size: 1.5rem; margin: 1rem 0;">CAT Preparation</h3>
+                    <p style="margin-bottom: 1.5rem;">Complete CAT prep with daily practice, mock tests, and sectional mastery. From basics to advanced level.</p>
+                    <a href="#" class="btn btn-primary" onclick="event.stopPropagation(); handleCategoryClick('cat-prep');">Start CAT Prep</a>
                 </div>
-                <div class="feature-card" style="text-align: center;">
-                    <div class="icon">💬</div>
-                    <h3>Weak GDPI prep</h3>
-                    <p>Lose out at final stage</p>
+                <div class="feature-card" style="text-align: center; cursor: pointer; transition: transform 0.3s;" onclick="handleCategoryClick('gdpi')">
+                    <div class="icon" style="font-size: 3rem;">💼</div>
+                    <h3 style="font-size: 1.5rem; margin: 1rem 0;">GDPI Training</h3>
+                    <p style="margin-bottom: 1.5rem;">Group Discussion and Personal Interview preparation. Convert your calls into final admits.</p>
+                    <a href="#" class="btn btn-primary" onclick="event.stopPropagation(); handleCategoryClick('gdpi');">Master GDPI</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What Makes Us Different -->
+    <!-- Why Choose PrepClan -->
     <section class="features">
         <div class="container">
-            <h2>What Makes Us Different</h2>
-            <p>Strategic preparation that actually works</p>
+            <h2>Why Choose PrepClan Mentoring?</h2>
+            <p>Get the competitive edge with personalized guidance</p>
             <div class="feature-grid">
                 <div class="feature-card">
                     <div class="icon">🎯</div>
@@ -63,71 +66,21 @@
                     <p>Customized roadmap based on your strengths, weaknesses, and target score. No generic one-size-fits-all approach.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="icon">👨‍🏫</div>
-                    <h3>Mentorship from Top Percentilers</h3>
-                    <p>Learn directly from mentors who scored 99+ percentile. Get insider strategies that actually work in the exam hall.</p>
+                    <div class="icon">👨🏫</div>
+                    <h3>Expert Mentors</h3>
+                    <p>Learn directly from IIM alumni and mentors who scored 99+ percentile. Get insider strategies that work.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="icon">💼</div>
-                    <h3>Complete GDPI Preparation</h3>
-                    <p>Group Discussion and Personal Interview training. Don't lose your seat at the final hurdle.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Programs Snapshot -->
-    <section class="features" style="background: var(--bg-white);">
-        <div class="container">
-            <h2>Our Programs</h2>
-            <p>Choose the right program for your preparation stage</p>
-            <div class="plans-grid" style="margin-top: 2rem;">
-                <div class="plan-card">
-                    <h3>CAT Full Prep</h3>
-                    <p class="price">Complete Package</p>
-                    <p>End-to-end preparation from basics to advanced. Includes daily practice, mentorship, and mock tests.</p>
-                    <ul>
-                        <li>12 months access</li>
-                        <li>Daily practice content</li>
-                        <li>1-1 mentorship sessions</li>
-                        <li>Full-length mocks</li>
-                        <li>GDPI preparation</li>
-                    </ul>
-                    <a href="pages/mentoring/mentoring.html" class="btn btn-primary">Learn More</a>
-                </div>
-                <div class="plan-card featured">
-                    <span class="badge">Most Popular</span>
-                    <h3>Crash Course</h3>
-                    <p class="price">Quick Revision</p>
-                    <p>Intensive 3-month program for last-minute preparation. Focus on high-yield topics and exam strategies.</p>
-                    <ul>
-                        <li>3 months access</li>
-                        <li>High-yield topics</li>
-                        <li>Weekly mentorship</li>
-                        <li>20+ mock tests</li>
-                        <li>Exam strategies</li>
-                    </ul>
-                    <a href="pages/mentoring/mentoring.html" class="btn btn-primary">Enroll Now</a>
-                </div>
-                <div class="plan-card">
-                    <h3>GDPI Intensive</h3>
-                    <p class="price">Final Stage</p>
-                    <p>Specialized program for Group Discussion and Personal Interview. Convert your calls into admits.</p>
-                    <ul>
-                        <li>2 months access</li>
-                        <li>Mock GD sessions</li>
-                        <li>1-1 PI practice</li>
-                        <li>Profile building</li>
-                        <li>B-school insights</li>
-                    </ul>
-                    <a href="pages/mentoring/mentoring.html" class="btn btn-primary">Get Started</a>
+                    <div class="icon">📊</div>
+                    <h3>Weekly Progress Tracking</h3>
+                    <p>Regular check-ins and performance analysis to keep you on track and continuously improving.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Success Metrics -->
-    <section class="features">
+    <section class="features" style="background: var(--bg-white);">
         <div class="container">
             <div class="phase-banner" style="background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);">
                 <h2>Proven Results</h2>
@@ -147,6 +100,30 @@
         </div>
     </footer>
 
+    <script>
+        function handleCategoryClick(category) {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                localStorage.setItem('redirectAfterLogin', category);
+                window.location.href = 'login.html';
+            } else {
+                if (category === 'mentoring') {
+                    window.location.href = 'pages/mentoring/mentoring.html';
+                } else if (category === 'cat-prep') {
+                    window.location.href = 'programs.html#cat-prep';
+                } else if (category === 'gdpi') {
+                    window.location.href = 'programs.html#gdpi';
+                }
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('mentoring-cta').addEventListener('click', function(e) {
+                e.preventDefault();
+                handleCategoryClick('mentoring');
+            });
+        });
+    </script>
     <script src="assets/js/navbar-update.js"></script>
     <script src="assets/js/main.js"></script>
 </body>

@@ -160,7 +160,7 @@ router.get(
         req.user.save();
 
         // Redirect to frontend with token
-        res.redirect(`/dashboard.html?token=${token}`);
+        res.redirect(`/pages/mentoring/mentoring.html?token=${token}`);
     }
 );
 
