@@ -21,22 +21,26 @@
         </div>
     </nav>
 
-    <!-- Premium Hero Section -->
+    <!-- Compact Hero Section -->
     <section class="dashboard-hero">
         <div class="container">
             <div class="hero-content">
                 <div class="welcome-text">
                     <h1>Welcome back, <span id="user-name">Student</span>! 👋</h1>
-                    <p>Ready to continue your CAT 2026 preparation journey?</p>
+                    <p>CAT 2026 • <span id="days-remaining">245</span> days remaining</p>
                 </div>
                 <div class="hero-stats">
                     <div class="hero-stat-item">
                         <span class="stat-number" id="total-completed">0</span>
-                        <span class="stat-label">Total Completed</span>
+                        <span class="stat-label">Completed</span>
                     </div>
                     <div class="hero-stat-item">
                         <span class="stat-number" id="streak-days">0</span>
                         <span class="stat-label">Day Streak</span>
+                    </div>
+                    <div class="hero-stat-item">
+                        <span class="stat-number" id="accuracy">0%</span>
+                        <span class="stat-label">Accuracy</span>
                     </div>
                 </div>
             </div>
@@ -46,127 +50,288 @@
     <!-- Main Dashboard Content -->
     <section class="dashboard-main">
         <div class="container">
-            <!-- Progress Overview -->
-            <div class="section-header">
-                <h2>📊 Your Progress</h2>
-                <p>Track your performance across all sections</p>
-            </div>
-            
-            <div class="progress-grid">
-                <div class="progress-card">
-                    <div class="progress-icon rc-icon">📖</div>
-                    <div class="progress-info">
-                        <h3>Reading Comprehension</h3>
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="rc-bar" style="width: 0%"></div>
+            <!-- Two Column Layout -->
+            <div class="dashboard-grid">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Today's Tasks -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>📋 Today's Tasks</h3>
+                            <span class="badge-count">4 pending</span>
                         </div>
-                        <div class="progress-stats-row">
-                            <span class="completed-count"><span id="rc-progress">0</span> sets completed</span>
-                            <span class="progress-percent" id="rc-percent">0%</span>
+                        <div class="task-list">
+                            <div class="task-item">
+                                <input type="checkbox" id="task1">
+                                <label for="task1">
+                                    <span class="task-title">Complete 2 RC passages</span>
+                                    <span class="task-time">30 min</span>
+                                </label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="task2">
+                                <label for="task2">
+                                    <span class="task-title">Solve 20 QA questions</span>
+                                    <span class="task-time">45 min</span>
+                                </label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="task3">
+                                <label for="task3">
+                                    <span class="task-title">Practice 1 DILR set</span>
+                                    <span class="task-time">25 min</span>
+                                </label>
+                            </div>
+                            <div class="task-item">
+                                <input type="checkbox" id="task4">
+                                <label for="task4">
+                                    <span class="task-title">Review yesterday's errors</span>
+                                    <span class="task-time">20 min</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section-wise Progress -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>📊 Section Progress</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="progress-list">
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="section-icon">📖</span>
+                                    <div class="section-info">
+                                        <h4>Reading Comprehension</h4>
+                                        <p><span id="rc-progress">0</span>/100 sets</p>
+                                    </div>
+                                    <span class="progress-percent" id="rc-percent">0%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill rc-fill" id="rc-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="section-icon">🧩</span>
+                                    <div class="section-info">
+                                        <h4>DILR</h4>
+                                        <p><span id="dilr-progress">0</span>/100 sets</p>
+                                    </div>
+                                    <span class="progress-percent" id="dilr-percent">0%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill dilr-fill" id="dilr-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="section-icon">🔢</span>
+                                    <div class="section-info">
+                                        <h4>Quantitative Aptitude</h4>
+                                        <p><span id="qa-progress">0</span>/500 questions</p>
+                                    </div>
+                                    <span class="progress-percent" id="qa-percent">0%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill qa-fill" id="qa-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <div class="progress-item">
+                                <div class="progress-header">
+                                    <span class="section-icon">✍️</span>
+                                    <div class="section-info">
+                                        <h4>Verbal Ability</h4>
+                                        <p><span id="va-progress">0</span>/500 questions</p>
+                                    </div>
+                                    <span class="progress-percent" id="va-percent">0%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill va-fill" id="va-bar" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>🕐 Recent Activity</h3>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">📖</div>
+                                <div class="activity-content">
+                                    <h4>Completed RC Set #12</h4>
+                                    <p>Score: 8/10 • 2 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">🔢</div>
+                                <div class="activity-content">
+                                    <h4>Solved 15 QA Questions</h4>
+                                    <p>Accuracy: 73% • 5 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">🧩</div>
+                                <div class="activity-content">
+                                    <h4>Attempted DILR Set #8</h4>
+                                    <p>Score: 6/8 • Yesterday</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="progress-card">
-                    <div class="progress-icon dilr-icon">🧩</div>
-                    <div class="progress-info">
-                        <h3>DILR</h3>
-                        <div class="progress-bar">
-                            <div class="progress-fill dilr-fill" id="dilr-bar" style="width: 0%"></div>
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Quick Actions -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>🚀 Quick Actions</h3>
                         </div>
-                        <div class="progress-stats-row">
-                            <span class="completed-count"><span id="dilr-progress">0</span> sets completed</span>
-                            <span class="progress-percent" id="dilr-percent">0%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="progress-card">
-                    <div class="progress-icon qa-icon">🔢</div>
-                    <div class="progress-info">
-                        <h3>Quantitative Aptitude</h3>
-                        <div class="progress-bar">
-                            <div class="progress-fill qa-fill" id="qa-bar" style="width: 0%"></div>
-                        </div>
-                        <div class="progress-stats-row">
-                            <span class="completed-count"><span id="qa-progress">0</span> questions completed</span>
-                            <span class="progress-percent" id="qa-percent">0%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="progress-card">
-                    <div class="progress-icon va-icon">✍️</div>
-                    <div class="progress-info">
-                        <h3>Verbal Ability</h3>
-                        <div class="progress-bar">
-                            <div class="progress-fill va-fill" id="va-bar" style="width: 0%"></div>
-                        </div>
-                        <div class="progress-stats-row">
-                            <span class="completed-count"><span id="va-progress">0</span> questions completed</span>
-                            <span class="progress-percent" id="va-percent">0%</span>
+                        <div class="quick-actions">
+                            <a href="pages/content/rc.html" class="quick-action-btn rc-btn">
+                                <span class="action-icon">📖</span>
+                                <span class="action-text">RC Practice</span>
+                            </a>
+                            <a href="pages/content/dilr.html" class="quick-action-btn dilr-btn">
+                                <span class="action-icon">🧩</span>
+                                <span class="action-text">DILR Practice</span>
+                            </a>
+                            <a href="pages/content/qa.html" class="quick-action-btn qa-btn">
+                                <span class="action-icon">🔢</span>
+                                <span class="action-text">QA Practice</span>
+                            </a>
+                            <a href="pages/content/va.html" class="quick-action-btn va-btn">
+                                <span class="action-icon">✍️</span>
+                                <span class="action-text">VA Practice</span>
+                            </a>
+                            <a href="pages/mocks/mocks.html" class="quick-action-btn mock-btn">
+                                <span class="action-icon">📝</span>
+                                <span class="action-text">Take Mock</span>
+                            </a>
+                            <a href="pages/mentoring/mentoring.html" class="quick-action-btn mentor-btn">
+                                <span class="action-icon">👨🏫</span>
+                                <span class="action-text">Book Mentor</span>
+                            </a>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Quick Actions -->
-            <div class="section-header" style="margin-top: 3rem;">
-                <h2>🚀 Quick Actions</h2>
-                <p>Jump right into your practice sessions</p>
-            </div>
-
-            <div class="quick-actions-grid">
-                <a href="pages/content/rc.html" class="action-card rc-card">
-                    <div class="action-icon">📖</div>
-                    <h3>RC Practice</h3>
-                    <p>5 sets available today</p>
-                    <span class="action-arrow">→</span>
-                </a>
-
-                <a href="pages/content/dilr.html" class="action-card dilr-card">
-                    <div class="action-icon">🧩</div>
-                    <h3>DILR Practice</h3>
-                    <p>5 sets available today</p>
-                    <span class="action-arrow">→</span>
-                </a>
-
-                <a href="pages/content/qa.html" class="action-card qa-card">
-                    <div class="action-icon">🔢</div>
-                    <h3>QA Practice</h3>
-                    <p>40 questions available</p>
-                    <span class="action-arrow">→</span>
-                </a>
-
-                <a href="pages/content/va.html" class="action-card va-card">
-                    <div class="action-icon">✍️</div>
-                    <h3>VA Practice</h3>
-                    <p>40 questions available</p>
-                    <span class="action-arrow">→</span>
-                </a>
-            </div>
-
-            <!-- Study Plan & Upgrade -->
-            <div class="bottom-section">
-                <div class="study-plan-card">
-                    <div class="plan-header">
-                        <h3>📚 Your Study Plan</h3>
-                    </div>
-                    <div class="plan-details">
-                        <div class="plan-item">
-                            <span class="plan-label">Target Exam</span>
-                            <span class="plan-value" id="user-exam">CAT 2026</span>
+                    <!-- Performance Stats -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>📈 Performance Stats</h3>
                         </div>
-                        <div class="plan-item">
-                            <span class="plan-label">Current Plan</span>
-                            <span class="plan-value" id="user-plan">None</span>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="stat-value">156</div>
+                                <div class="stat-label">Questions Solved</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">12h</div>
+                                <div class="stat-label">Study Time</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">68%</div>
+                                <div class="stat-label">Avg Accuracy</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">3</div>
+                                <div class="stat-label">Mocks Taken</div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="upgrade-card">
-                    <div class="upgrade-content">
-                        <h3>🎯 Upgrade Your Preparation</h3>
+                    <!-- Weak Areas -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>⚠️ Focus Areas</h3>
+                        </div>
+                        <div class="weak-areas">
+                            <div class="weak-item">
+                                <div class="weak-header">
+                                    <span>Algebra</span>
+                                    <span class="weak-score">45%</span>
+                                </div>
+                                <div class="weak-bar">
+                                    <div class="weak-fill" style="width: 45%; background: #ff4444;"></div>
+                                </div>
+                            </div>
+                            <div class="weak-item">
+                                <div class="weak-header">
+                                    <span>Para Jumbles</span>
+                                    <span class="weak-score">52%</span>
+                                </div>
+                                <div class="weak-bar">
+                                    <div class="weak-fill" style="width: 52%; background: #ff9933;"></div>
+                                </div>
+                            </div>
+                            <div class="weak-item">
+                                <div class="weak-header">
+                                    <span>Data Sufficiency</span>
+                                    <span class="weak-score">58%</span>
+                                </div>
+                                <div class="weak-bar">
+                                    <div class="weak-fill" style="width: 58%; background: #ffbb33;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Study Streak Calendar -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>🔥 Study Streak</h3>
+                        </div>
+                        <div class="streak-calendar">
+                            <div class="calendar-grid">
+                                <div class="calendar-day active" title="Studied">M</div>
+                                <div class="calendar-day active" title="Studied">T</div>
+                                <div class="calendar-day active" title="Studied">W</div>
+                                <div class="calendar-day active" title="Studied">T</div>
+                                <div class="calendar-day active" title="Studied">F</div>
+                                <div class="calendar-day" title="Rest day">S</div>
+                                <div class="calendar-day active" title="Studied">S</div>
+                            </div>
+                            <p class="streak-text">6 days streak! Keep it up! 🎉</p>
+                        </div>
+                    </div>
+
+                    <!-- Upcoming Sessions -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>📅 Upcoming Sessions</h3>
+                        </div>
+                        <div class="sessions-list">
+                            <div class="session-item">
+                                <div class="session-date">
+                                    <div class="date-day">15</div>
+                                    <div class="date-month">Jan</div>
+                                </div>
+                                <div class="session-info">
+                                    <h4>1-1 Mentoring Session</h4>
+                                    <p>4:00 PM - 5:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="session-item">
+                                <div class="session-date">
+                                    <div class="date-day">18</div>
+                                    <div class="date-month">Jan</div>
+                                </div>
+                                <div class="session-info">
+                                    <h4>Mock Test #4</h4>
+                                    <p>10:00 AM - 1:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upgrade CTA -->
+                    <div class="dashboard-card upgrade-cta">
+                        <h3>🎯 Upgrade Your Prep</h3>
                         <p>Get personalized mentoring and accelerate your progress</p>
                         <a href="pages/mentoring/mentoring.html" class="btn btn-primary">Explore Plans</a>
                     </div>
