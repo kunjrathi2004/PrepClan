@@ -3,10 +3,20 @@ const express = require('express');
 const cors = require('cors');
 const session = require('express-session');
 const connectDB = require('./server/config/database');
-const passport = require('./server/config/passport');
+// const passport = require('./server/config/passport');
 
 // Initialize Express
 const app = express();
+//trying to get website live
+process.on('uncaughtException', (err) => {
+    console.error('UNCAUGHT EXCEPTION');
+    console.error(err);
+});
+
+process.on('unhandledRejection', (err) => {
+    console.error('UNHANDLED REJECTION');
+    console.error(err);
+});
 
 // Validate critical environment variables
 const requiredEnvVars = ['MONGODB_URI', 'JWT_SECRET', 'SESSION_SECRET'];
@@ -24,7 +34,11 @@ if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
 
 // Connect to MongoDB
 connectDB();
-
+//trying to get website live
+app.use((req, res, next) => {
+    console.log(`➡️ ${req.method} ${req.url}`);
+    next();
+});
 // Middleware - CORS must be before routes
 const allowedOrigins = [
     'http://localhost:5000',
@@ -37,12 +51,14 @@ if (process.env.RAILWAY_PUBLIC_DOMAIN) {
     allowedOrigins.push(`https://${process.env.RAILWAY_PUBLIC_DOMAIN}`);
 }
 
-app.use(cors({
-    origin: allowedOrigins,
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// commenting for website live reasons
+// app.use(cors({
+//     origin: allowedOrigins,
+//     credentials: true,
+//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+//     allowedHeaders: ['Content-Type', 'Authorization']
+// }));
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -60,8 +76,8 @@ app.use(
 );
 
 // Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // Serve static files
 app.use(express.static('.'));
