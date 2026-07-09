@@ -86,7 +86,7 @@ app.get('/', (req, res) => {
     res.send('PrepClan backend is alive!');
 });
 // Routes
-app.use('/api/auth', require('./server/routes/auth'));
+// app.use('/api/auth', require('./server/routes/auth'));
 
 // Health check route
 app.get('/api/health', (req, res) => {
