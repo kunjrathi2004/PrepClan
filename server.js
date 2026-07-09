@@ -81,7 +81,10 @@ app.use(
 
 // Serve static files
 app.use(express.static('.'));
-
+//testing website live
+app.get('/', (req, res) => {
+    res.send('PrepClan backend is alive!');
+});
 // Routes
 app.use('/api/auth', require('./server/routes/auth'));
 
